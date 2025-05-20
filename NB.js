@@ -1,9 +1,6 @@
+var dylanlxlx = JSON.parse($response.body);
 
-
-
-var objc = JSON.parse($response.body);
-
-objc = {
+dylanlxlx = {
     "data": {
         "processAppleReceipt": {
             "__typename": "SubscriptionResult",
@@ -28,5 +25,4 @@ objc = {
         }
     }
 }
-
-$done({body: JSON.stringify(objc)});
+$done({body: JSON.stringify(dylanlxlx)});
