@@ -1,12 +1,6 @@
-// const $ = new Env("GoodNotes");
-
-// 从请求头中提取 User-Agent
-const ua = $request.headers["user-agent"] || $request.headers["User-Agent"];
 let dylanlxlx = JSON.parse($response.body);
 
-// 检查请求 URL 是否包含 "graphql"
 if ($request.url.indexOf("graphql") != -1) {
-    // 返回伪造的 GraphQL 响应，表示 App Store 订阅
     dylanlxlx = {
         data: {
             processAppleReceipt: {
@@ -33,7 +27,6 @@ if ($request.url.indexOf("graphql") != -1) {
         }
     };
 } else {
-    // 返回伪造的订阅管理 API 响应
     dylanlxlx = {
         request_date: "2025-02-22T14:52:31Z",
         request_date_ms: 6811111111111,
@@ -77,4 +70,5 @@ if ($request.url.indexOf("graphql") != -1) {
         }
     };
 }
+
 $done({ body: JSON.stringify(dylanlxlx) });
